@@ -1,5 +1,6 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -62,5 +63,13 @@ public class StarWarsAPITest {
 
         // Print the name of the planet with the largest diameter
         System.out.println("The planet with the largest diameter is " + largestDiameterPlanetName);
+
+        // Assert the name of the planet with the largest diameter
+        String expectedPlanetName = "Bespin";
+        Assert.assertEquals("The planet with the largest diameter has the correct name", expectedPlanetName, largestDiameterPlanetName);
+
+        // Assert the diameter of the planet with the largest diameter
+        int expectedDiameter = 118000;
+        Assert.assertEquals("The planet with the largest diameter has the correct diameter", expectedDiameter, largestDiameter);
     }
 }
